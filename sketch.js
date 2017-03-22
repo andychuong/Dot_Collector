@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var myX, myY;
 var r,g,b;
 var myPoints;
@@ -9,11 +10,23 @@ var cirX, cirY;
 function preload() {
    fontOther = loadFont("assets/Oswald-Regular.ttf");
    fontHeaders = loadFont("assets/LuckiestGuy.ttf");
+=======
+	var myX, myY;
+	var r,g,b;
+	var myPoints;
+	// var drops = [];
+	var numDrops = 50;
+	var gameOver = false;
+	var cirX, cirY;
+>>>>>>> afa3b4df27e1ac6c764839584bafe74f2d3089fa
 
 }
 
+<<<<<<< HEAD
 // P5 STUFF
 
+=======
+>>>>>>> afa3b4df27e1ac6c764839584bafe74f2d3089fa
 function setup() {
 	createCanvas(windowWidth,windowHeight);
 	background('cyan');
@@ -43,6 +56,7 @@ function draw() {
 		// 'height':windowHeight,
 		// 'points':myPoints,
 	});
+<<<<<<< HEAD
 	fill('deepskyblue');
 	textFont(fontHeaders);
 	textSize(40);
@@ -53,6 +67,13 @@ function draw() {
 	textSize(20);
 	// textFont(fontHeaders);
 	text("Score: " + myPoints, windowWidth-70, windowHeight - 10);
+=======
+
+	fill(0);
+	textSize(20);
+	// textFont(fontHeaders);
+	text("Score: " + myPoints, windowWidth-100, windowHeight - 30);
+>>>>>>> afa3b4df27e1ac6c764839584bafe74f2d3089fa
 	text("Use arrow keys to move your box (red).", 10, windowHeight-50);
 	text("Touch the green circle first to get points.", 10, windowHeight -30);
 	text("First to 10 points wins", 10, windowHeight -10);
@@ -114,7 +135,15 @@ function circObject(dia){
 			console.log('touched');
 			cirX = random(50,windowWidth-50);
 			cirY = random(50,windowHeight-50);
+<<<<<<< HEAD
 			
+=======
+			sendCirc({
+				cX: cirX,
+				cY: cirY,
+				gO: gameOver
+			});
+>>>>>>> afa3b4df27e1ac6c764839584bafe74f2d3089fa
 			if(this.touched === false){
 				if(myPoints < 9){
 					myPoints++;
@@ -126,11 +155,14 @@ function circObject(dia){
 				console.log(myPoints);
 				console.log(gameOver);
 			}
+<<<<<<< HEAD
 			sendCirc({
 				cX: cirX,
 				cY: cirY,
 				gO: gameOver
 			});
+=======
+>>>>>>> afa3b4df27e1ac6c764839584bafe74f2d3089fa
 			// this.touched = true;
 			this.color = color(0);
 		}
@@ -188,6 +220,7 @@ function rectObj(){
 
 		rect(myX,myY,30,60);
 	}
+<<<<<<< HEAD
 
 	this.dispOth = function(x,y, someW, someH){
 		this.newX  = map(x,0,someW,0,windowWidth);
@@ -215,4 +248,29 @@ function changeCirc(x,y,go){
 
 function windowResized(){
 	resizeCanvas(windowWidth,windowHeight);
+=======
+
+	this.dispOth = function(x,y, someW, someH){
+		this.newX  = map(x,0,someW,0,windowWidth);
+		this.newY = map(y,0,someH,0,windowHeight);
+		fill('grey');
+		rect(newX,newY,30,60);
+	}
+}
+
+function drawOther(someX, someY){
+	// fill('blue');
+	// // stroke('cyan');
+	// strokeWeight(40);
+	// var newX = map(someX,0,someW,0,windowWidth);
+	// var newY = map(someY,0,someH,0,windowHeight);
+	fill('blue');
+	rect(someX,someY,30,60);
+}
+
+function changeCirc(x,y,go){
+	cirX = x,
+	cirY = y,
+	gameOver = go;
+>>>>>>> afa3b4df27e1ac6c764839584bafe74f2d3089fa
 }
