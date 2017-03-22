@@ -26,18 +26,14 @@
 
     socket.on('otherdrawing',function(data){
       //console.log("received other drawing:" + data.x +" " + data.y);
-
+      drawOther(data.x,data.y);
+    });
+    socket.on('otherCirc',function(data){
+      changeCirc(data.cX,data.cY,data.gO);
     });
 
 
   </script>
-
-    <style> body {
-      padding: 0; 
-      margin: 0;
-    }
-
-  </style>
 </head>
 
 <body>

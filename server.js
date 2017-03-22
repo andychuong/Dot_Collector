@@ -49,6 +49,10 @@ io.sockets.on('connection',
 
 		});
 
+		socket.on('circData',function(data){
+			socket.broadcast.emit('otherCirc',data);
+		});
+
 
 		socket.on('disconnect', function() {
 			console.log("Client has disconnected " + socket.id);
